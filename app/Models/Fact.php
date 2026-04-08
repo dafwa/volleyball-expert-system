@@ -10,6 +10,7 @@ class Fact extends Model
     protected $fillable = [
         'code',
         'description',
+        'category',
     ];
 
     /**
