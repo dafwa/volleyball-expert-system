@@ -1,0 +1,28 @@
+Kode Rule,Logika Mesin,Jenis Kesalahan (Goals),Deskripsi Output Sistem
+R01,IF F01 OR F56,Four Hits,Terjadi pelanggaran karena tim melakukan lebih dari tiga kali sentuhan bola dalam satu rally.
+R02,IF F02 OR F03,Assisted Hit,Pemain menggunakan bantuan fisik atau alat di lapangan saat memainkan bola.
+R03,IF F04,Catch,Kontak bola tidak sah karena bola ditangkap atau ditahan.
+R04,IF F05 OR F06,Double Contact,Pemain melakukan sentuhan ganda dalam satu aksi.
+R05,IF F07 OR F08 OR F09 OR F10 OR F11 OR F12 OR F13,Ball Out,Bola dinyatakan keluar karena tidak melalui lintasan yang sah.
+R06,IF F14 OR F15 OR F16,Net Fault,Terjadi pelanggaran terkait kontak atau penggunaan net.
+R07,IF F17 OR F18,Penetration Fault,Pemain melanggar area lawan melalui garis tengah atau bawah net.
+R08,IF F19,Positional Fault,Formasi pemain tidak sesuai saat servis dilakukan.
+R09,IF F20 OR F55,Rotational Fault,Kesalahan urutan rotasi menyebabkan kehilangan servis.
+R10,IF F21 OR F22,Execution Fault,Servis tidak dilakukan sesuai prosedur yang benar.
+R11,IF F23 OR F24,Service Foot Fault,Kesalahan posisi kaki saat melakukan servis.
+R12,IF F25 OR F45 OR F46 OR F47 OR F54,Delay Penalty,Tim dikenai penalti karena menunda jalannya pertandingan.
+R13,IF F26 OR F27,Service Fault,Servis gagal atau tidak sah.
+R14,IF F28 OR F29,Screening,Tim melakukan penghalangan pandangan terhadap lawan saat servis.
+R15,IF F30,Attack Hit Fault (Direct),Pemain menyerang bola yang masih berada di area lawan.
+R16,IF F31 AND F32,Attack Hit Fault (Back-Row),Pemain belakang melakukan serangan ilegal dari area depan.
+R17,IF F33 AND F32,Attack Hit Fault (Serve Attack),Serangan langsung terhadap servis lawan dilakukan secara ilegal.
+R18,IF F34 AND F32,Attack Hit Fault (Libero),Libero melakukan serangan tidak sah di atas net.
+R19,IF F35 AND F32,Attack Hit Fault (Libero Pass),Serangan berasal dari set Libero di area depan.
+R20,IF F36 OR F37 OR F38 OR F39 OR F40,Blocking Fault,Kesalahan terjadi dalam aksi block.
+R21,IF F41 OR F42 OR F43,Illegal Substitution,Pergantian pemain tidak sesuai aturan.
+R22,IF F44,Illegal Libero Replacement,Pergantian Libero tidak memenuhi ketentuan rally.
+R23,IF F48,Rude Conduct,Perilaku tidak sopan dikenai sanksi poin untuk lawan.
+R24,IF F49,Offensive Conduct,Pelanggaran berat berujung pengusiran dari set.
+R25,IF F50,Aggression,Tindakan agresif menyebabkan diskualifikasi.
+R26,IF F51 OR F53,Illegal Equipment/Uniform,Peralatan atau seragam tidak sesuai aturan.
+R27,IF F52,Incomplete Team,Tim dinyatakan kalah karena tidak memenuhi jumlah pemain minimum.
