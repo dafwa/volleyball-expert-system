@@ -26,3 +26,4 @@ R24,IF F49,Offensive Conduct,Pelanggaran berat berujung pengusiran dari set.
 R25,IF F50,Aggression,Tindakan agresif menyebabkan diskualifikasi.
 R26,IF F51 OR F53,Illegal Equipment/Uniform,Peralatan atau seragam tidak sesuai aturan.
 R27,IF F52,Incomplete Team,Tim dinyatakan kalah karena tidak memenuhi jumlah pemain minimum.
+R08b,IF F57,Positional Fault,Formasi baris depan dan belakang pemain bertukar secara ilegal sebelum pelambungan bola servis.
