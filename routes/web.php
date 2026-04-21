@@ -5,6 +5,8 @@ use Laravel\Fortify\Features;
 use App\Http\Controllers\InferenceController;
 use App\Http\Controllers\FactController;
 use App\Http\Controllers\RuleController;
+use App\Models\Fact;
+use App\Models\Rule;
 
 Route::inertia('/', 'welcome', [
     'canRegister' => Features::enabled(Features::registration()),
@@ -15,7 +17,12 @@ Route::get('/inference', [InferenceController::class, 'index'])->name('inference
 Route::post('/inference/result', [InferenceController::class, 'evaluate'])->name('inference.evaluate');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::inertia('dashboard', 'dashboard')->name('dashboard');
+    Route::get('dashboard', function () {
+        return inertia('dashboard', [
+            'factCount' => Fact::count(),
+            'ruleCount' => Rule::count(),
+        ]);
+    })->name('dashboard');
     
     // Admin Knowledge Base Routes
     Route::resource('admin/facts', FactController::class);
