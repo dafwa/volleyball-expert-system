@@ -23,7 +23,7 @@ class InferenceController extends Controller
     }
 
     /**
-     * Evaluate the selected facts and return the inferred rule.
+     * Evaluate the selected facts and return the inferred rules (Multi-Match).
      */
     public function evaluate(Request $request): Response
     {
@@ -36,23 +36,23 @@ class InferenceController extends Controller
         
         // Eager load rules with their conditions
         $rules = Rule::with('ruleConditions.fact')->get();
+        $selectedFacts = Fact::whereIn('id', $submittedFactIds)->get();
         
-        $triggeredRule = null;
+        $triggeredRules = [];
 
-        // Forward Chaining algorithm
+        // Forward Chaining algorithm (Multi-Match)
         foreach ($rules as $rule) {
             if ($rule->isSatisfiedBy($submittedFactIds)) {
-                $triggeredRule = $rule;
-                break; // Trigger the FIRST rule that matches
+                $requiredFactIds = $rule->ruleConditions->pluck('fact_id');
+                // Attach specific triggering facts dynamically
+                $rule->triggering_facts = $selectedFacts->whereIn('id', $requiredFactIds)->values();
+                $triggeredRules[] = $rule;
             }
         }
 
-        // Fetch the selected facts to display to the user
-        $selectedFacts = Fact::whereIn('id', $submittedFactIds)->get();
-
         return Inertia::render('Inference/Result', [
-            'rule' => $triggeredRule,
-            'matchedFacts' => $selectedFacts,
+            'triggered_rules' => $triggeredRules,
+            'selected_facts' => $selectedFacts,
         ]);
     }
 }
