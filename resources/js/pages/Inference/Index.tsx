@@ -40,17 +40,17 @@ export default function Index({ facts }: { facts: Record<string, any[]> }) {
                             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                             </svg>
-                            Back to Home
+                            Kembali ke Halaman Utama
                         </Link>
                     </div>
                     
                     <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                         <div className="px-6 py-8 sm:p-10 border-b border-gray-100 bg-gradient-to-r from-blue-600 to-indigo-700">
-                            <h2 className="text-3xl font-extrabold text-white">Select Facts</h2>
+                            <h2 className="text-3xl font-extrabold text-white">Pilih Fakta</h2>
                             <p className="mt-2 text-indigo-100 text-lg">
                                 {activeCategory 
-                                    ? `Select the specific constraints under ${activeCategory}`
-                                    : 'Please choose a category below to browse and select exactly what happened.'}
+                                    ? `Pilih Fakta yang sesuai dengan kejadian`
+                                    : 'Silahkan pilih kategori di bawah untuk melihat dan memilih fakta yang terjadi.'}
                             </p>
                         </div>
 
@@ -95,7 +95,7 @@ export default function Index({ facts }: { facts: Record<string, any[]> }) {
                                         <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                                         </svg>
-                                        Back to Categories
+                                        Kembali ke Kategori
                                     </button>
                                     
                                     <h3 className="text-2xl font-bold text-gray-900 mb-6">{activeCategory}</h3>
@@ -118,11 +118,8 @@ export default function Index({ facts }: { facts: Record<string, any[]> }) {
                                                         onChange={() => handleCheckboxChange(fact.id)}
                                                     />
                                                 </div>
-                                                <div className="ml-5 flex flex-col cursor-pointer flex-grow">
-                                                    <span className="block text-md font-bold text-gray-900">
-                                                        Fact {fact.code}
-                                                    </span>
-                                                    <span className="block text-sm text-gray-600 mt-1.5 leading-relaxed">
+                                                <div className="ml-5 flex flex-col justify-center cursor-pointer flex-grow mt-0.5">
+                                                    <span className="block text-base font-medium text-gray-900 leading-relaxed">
                                                         {fact.description}
                                                     </span>
                                                 </div>
@@ -146,7 +143,7 @@ export default function Index({ facts }: { facts: Record<string, any[]> }) {
                         disabled={processing}
                         className="pointer-events-auto flex items-center justify-center py-4 px-10 rounded-full shadow-2xl text-xl font-bold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500/50 hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:hover:-translate-y-0 disabled:cursor-not-allowed"
                     >
-                        {processing ? 'Processing Engine...' : `Evaluate (${data.fact_ids.length}) Selected Facts`}
+                        {processing ? 'Processing Engine...' : `Analisis (${data.fact_ids.length}) Fakta Terpilih`}
                     </button>
                 </div>
             )}

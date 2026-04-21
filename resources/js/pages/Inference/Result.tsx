@@ -49,14 +49,8 @@ export default function Result({ triggered_rules, selected_facts }: { triggered_
                                         return (
                                             <div key={idx} className="border border-red-100 bg-white shadow-sm rounded-xl overflow-hidden flex flex-col hover:border-red-300 transition-colors">
                                                 {/* Card Header Flexbox */}
-                                                <div className="p-4 bg-gray-50 border-b border-gray-100 flex flex-wrap items-center gap-3">
-                                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-100 text-purple-800">
-                                                        {rule.code}
-                                                    </span>
-                                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-bold bg-green-100 text-green-800 tracking-wider">
-                                                        {logicType}
-                                                    </span>
-                                                    <h3 className="text-lg font-bold text-gray-900 ml-1">
+                                                <div className="p-4 bg-gray-50 border-b border-gray-100 flex flex-wrap items-center">
+                                                    <h3 className="text-xl font-bold text-gray-900">
                                                         {rule.goal_name}
                                                     </h3>
                                                 </div>
@@ -67,11 +61,13 @@ export default function Result({ triggered_rules, selected_facts }: { triggered_
                                                 </div>
                                                 
                                                 {/* Card Footer */}
-                                                <div className="p-4 bg-gray-50 border-t border-gray-100 text-sm flex gap-2 items-center">
+                                                <div className="p-4 bg-gray-50 border-t border-gray-100 text-sm flex flex-col gap-2">
                                                     <span className="font-bold text-gray-600">Fakta pemicu:</span>
-                                                    <span className="font-semibold text-indigo-600 bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded-md">
-                                                        {rule.triggering_facts?.map((f: any) => f.code).join(', ')}
-                                                    </span>
+                                                    <ul className="list-disc pl-5 mt-1 space-y-1 text-gray-700">
+                                                        {rule.triggering_facts?.map((f: any) => (
+                                                            <li key={f.id}>{f.description}</li>
+                                                        ))}
+                                                    </ul>
                                                 </div>
                                             </div>
                                         );
@@ -94,8 +90,7 @@ export default function Result({ triggered_rules, selected_facts }: { triggered_
                                                         <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
                                                     </div>
                                                     <div>
-                                                        <span className="font-semibold text-gray-900 mr-2">{fact.code}:</span>
-                                                        <span className="text-gray-600">{fact.description}</span>
+                                                        <span className="font-medium text-gray-800">{fact.description}</span>
                                                     </div>
                                                 </li>
                                             ))}
@@ -116,7 +111,7 @@ export default function Result({ triggered_rules, selected_facts }: { triggered_
                                 className="inline-flex items-center gap-2 py-3 px-8 text-base font-semibold rounded-full text-indigo-700 bg-indigo-100 hover:bg-indigo-200 transition-colors focus:ring-4 focus:ring-indigo-100 focus:outline-none"
                             >
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
-                                Restart / Analyze Another Case
+                                Analisis Kasus Lain
                             </Link>
                         </div>
                     </div>

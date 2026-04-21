@@ -46,7 +46,7 @@ export default function Welcome({ canRegister }: { canRegister?: boolean }) {
                         Volleyball <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Foul Expert System</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-300">
-                        Identify fouls quickly and accurately using our advanced forward chaining inference engine.
+                        Deteksi pelanggaran dalam Bola Voli menggunakan Sistem Inferensi Forward Chaining.
                     </p>
                     
                     <div className="mt-8">
@@ -55,7 +55,7 @@ export default function Welcome({ canRegister }: { canRegister?: boolean }) {
                             className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white bg-indigo-600 rounded-full overflow-hidden transition-all duration-300 hover:bg-indigo-700 hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-indigo-500/50 shadow-lg shadow-indigo-600/30"
                         >
                             <span className="relative z-10 flex items-center gap-2">
-                                Start Engine
+                                Mulai Analisis
                                 <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                             </span>
                         </Link>
